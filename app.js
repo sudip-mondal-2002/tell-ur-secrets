@@ -28,7 +28,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.MONGODB_LINK, { useNewUrlParser: true,});
+mongoose.connect(process.env.MONGODB_LINK, { useNewUrlParser: true, });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -78,7 +78,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/auth/google",
-  passport.authenticate('google', { scope: ["profile","email"] })
+  passport.authenticate('google', { scope: ["profile", "email"] })
 );
 
 app.get("/auth/google/secrets",
